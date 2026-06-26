@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: ai-placement-copilot-backend
+    env:
+      - name: MONGODB_URI
+        value: "${MONGODB_URI}"
+      - name: GEMINI_API_KEY
+        value: "${GEMINI_API_KEY}"
+      - name: OPENAI_API_KEY
+        value: "${OPENAI_API_KEY}"
+      - name: FRONTEND_URL
+        value: "${FRONTEND_URL}"
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    healthCheckPath: "/"
+    envFromSecrets: true
+    region: oregon

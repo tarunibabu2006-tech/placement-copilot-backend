@@ -1,0 +1,1 @@
+FROM python:3.11-slim\n\nWORKDIR /app\n\n# Install dependencies\nCOPY backend/requirements.txt ./\nRUN pip install --no-cache-dir -r requirements.txt\n\n# Copy application code\nCOPY backend/ .\n\nEXPOSE 80\n\nCMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
