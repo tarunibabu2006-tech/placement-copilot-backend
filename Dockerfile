@@ -1,1 +1,17 @@
-FROM python:3.11-slim\n\nWORKDIR /app\n\n# Install dependencies\nCOPY backend/requirements.txt ./\nRUN pip install --no-cache-dir -r requirements.txt\n\n# Copy application code\nCOPY backend/ .\n\nEXPOSE 80\n\nCMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+COPY backend/requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy backend source code
+COPY backend/ ./
+
+EXPOSE 8000
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
