@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import os
+from app.routers import auth, resume
 
 app = FastAPI(title="AI Placement Copilot Backend", version="0.1.0")
 
@@ -21,3 +22,6 @@ def home():
 @app.get("/health")
 async def health_check():
     return {"status": "ok"}
+
+app.include_router(auth.router, prefix="/auth")
+app.include_router(resume.router)

@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../providers/auth_provider.dart';
 import '../widgets/glass_card.dart';
 import 'login_screen.dart';
+import 'resume_analyzer_screen.dart';
+
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -164,11 +166,19 @@ class DashboardScreen extends StatelessWidget {
                     childAspectRatio: 0.85,
                     children: [
                       // Resume Analyzer
-                      _buildFeatureCard(
-                        icon: Icons.description_outlined,
-                        title: 'Resume Analyzer',
-                        subtitle: 'Upload PDF and get ATS rating feedback',
-                        accentColor: const Color(0xFF6366F1),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const ResumeAnalyzerScreen()),
+                          );
+                        },
+                        child: _buildFeatureCard(
+                          icon: Icons.description_outlined,
+                          title: 'Resume Analyzer',
+                          subtitle: 'Upload PDF and get ATS rating feedback',
+                          accentColor: const Color(0xFF6366F1),
+                        ),
                       ),
                       // Mock Interview
                       _buildFeatureCard(

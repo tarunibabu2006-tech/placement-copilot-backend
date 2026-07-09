@@ -8,3 +8,5 @@ passlib[bcrypt]
 alembic
 python-multipart
 pyngrok
+google-generativeai
+PyMuPDF
