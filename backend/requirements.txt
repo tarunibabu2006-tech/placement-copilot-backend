@@ -10,3 +10,4 @@ python-multipart
 pyngrok
 google-generativeai
 PyMuPDF
+email-validator
