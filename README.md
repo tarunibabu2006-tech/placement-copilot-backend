@@ -6,7 +6,6 @@ A premium, full-stack, AI-powered placement preparation platform designed specif
 
 ## 🔗 Live Deployments
 
-*   **API Backend:** [https://placement-copilot-backend-production.up.railway.app](https://placement-copilot-backend-production.up.railway.app)
 *   **Interactive API Documentation (Swagger):** [https://placement-copilot-backend-production.up.railway.app/docs](https://placement-copilot-backend-production.up.railway.app/docs)
 
 ---
